@@ -5,6 +5,6 @@ namespace Domain.Interfaces
     public interface IAccountRepository
     {
         void Add(User user);
-        string GetByEmail(string email);
+        User GetByEmail(string email);
     }
 }
