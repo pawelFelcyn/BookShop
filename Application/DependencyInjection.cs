@@ -2,6 +2,7 @@
 using Application.Services;
 using AspNetAuthentication.TokenGeneration;
 using Domain.Entities;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -17,6 +18,10 @@ namespace Application
 
             services.AddScoped<ITokenGenerator<User>, UserJwtTokenGenerator>();
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+            services.AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true));
+
+            services.AddScoped<IAccountService, AccountService>();
 
             return services;
         }
