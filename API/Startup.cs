@@ -1,3 +1,6 @@
+using Application;
+using AspNetAuthentication;
+using Infrastructure;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +32,9 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BookShopConnection")));
+
+            services.AddApplication()
+                    .AddInfrastructure();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
