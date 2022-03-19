@@ -1,5 +1,6 @@
 using Application;
 using AspNetAuthentication;
+using AspNetAuthentication.Settings;
 using Infrastructure;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,11 @@ namespace API
             services.AddApplication()
                     .AddInfrastructure();
 
+            var authenticationSettings = new AuthenticationSettings();
+            Configuration.GetSection("Authentication").Bind(authenticationSettings);
+
+            services.AddDefaultAuthentication(authenticationSettings);
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -56,6 +62,8 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
