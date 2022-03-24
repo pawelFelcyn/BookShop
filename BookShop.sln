@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetAuthentication", "..\PFLibrary\AspNetAuthentication\AspNetAuthentication.csproj", "{2D61A7A9-9FC8-4219-8806-BE10E1A92088}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "Application.Tests\Application.Tests.csproj", "{8594B479-38B8-4AC9-869F-CA2CD3658D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Tests", "Application.Tests\Application.Tests.csproj", "{8594B479-38B8-4AC9-869F-CA2CD3658D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Tests", "API.Tests\API.Tests.csproj", "{0E45D405-AF95-4543-8C06-CFF3BDC1F59B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8594B479-38B8-4AC9-869F-CA2CD3658D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8594B479-38B8-4AC9-869F-CA2CD3658D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8594B479-38B8-4AC9-869F-CA2CD3658D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E45D405-AF95-4543-8C06-CFF3BDC1F59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E45D405-AF95-4543-8C06-CFF3BDC1F59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E45D405-AF95-4543-8C06-CFF3BDC1F59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E45D405-AF95-4543-8C06-CFF3BDC1F59B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
