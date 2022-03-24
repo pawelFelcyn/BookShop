@@ -1,3 +1,4 @@
+using API.Middleware;
 using Application;
 using AspNetAuthentication;
 using AspNetAuthentication.Settings;
@@ -33,7 +34,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookShopDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BookShopConnection")));
-
+            services.AddScoped<ErrorHandler>();
             services.AddApplication()
                     .AddInfrastructure();
 
@@ -58,6 +59,8 @@ namespace API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
+
+            app.UseMiddleware<ErrorHandler>();
 
             app.UseHttpsRedirection();
 
