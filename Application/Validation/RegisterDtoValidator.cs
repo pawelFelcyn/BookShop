@@ -133,7 +133,7 @@ namespace Application.Validation
             RuleFor(r => r.PostalCode)
                 .Must(p =>
                 {
-                    if (p.Length != 6)
+                    if (p is null || p.Length != 6)
                     {
                         return false;
                     }
@@ -165,6 +165,11 @@ namespace Application.Validation
             RuleFor(r => r.Password)
                 .Must(p =>
                 {
+                    if (p is null)
+                    {
+                        return false;
+                    }
+
                     var containsUpper = false;
                     var containsDigit = false;
 
