@@ -5,7 +5,7 @@ namespace Application.Tests.Helpers
 {
     internal static class TestOutputHelperExtensions
     {
-        public static void LogValidationErrorsIfExists(this ITestOutputHelper testOutputHelper, ValidationResult validationResult)
+        public static void LogValidationErrorsIfExist(this ITestOutputHelper testOutputHelper, ValidationResult validationResult)
         {
             foreach (var e in validationResult.Errors)
             {
