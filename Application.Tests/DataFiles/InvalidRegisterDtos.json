@@ -390,5 +390,61 @@
     "PostalCode": "89-320",
     "Password": "Password123",
     "ConfirmPassword": "xddd"
+  },
+  {
+    "FirstName": "Jack",
+    "LastName": "Strong",
+    "Birthdate": "01-01-2000",
+    "Email": "valid@email.com",
+    "PhoneNumber": "987654321",
+    "RoleName": "Admin",
+    "Country": "Poland",
+    "City": "Poznañ",
+    "Street": "D³uga 5",
+    "PostalCode": "",
+    "Password": "Password123",
+    "ConfirmPassword": "Password123"
+  },
+  {
+    "FirstName": "Jack",
+    "LastName": "Strong",
+    "Birthdate": "01-01-2000",
+    "Email": "valid@email.com",
+    "PhoneNumber": "987654321",
+    "RoleName": "Admin",
+    "Country": "Poland",
+    "City": "Poznañ",
+    "Street": "D³uga 5",
+    "PostalCode": null,
+    "Password": "Password123",
+    "ConfirmPassword": "Password123"
+  },
+  {
+    "FirstName": "Jack",
+    "LastName": "Strong",
+    "Birthdate": "01-01-2000",
+    "Email": "valid@email.com",
+    "PhoneNumber": "987654321",
+    "RoleName": "Admin",
+    "Country": "Poland",
+    "City": "Poznañ",
+    "Street": "D³uga 5",
+    "PostalCode": "xd",
+    "Password": "",
+    "ConfirmPassword": ""
+  },
+  {
+    "FirstName": "Jack",
+    "LastName": "Strong",
+    "Birthdate": "01-01-2000",
+    "Email": "valid@email.com",
+    "PhoneNumber": "987654321",
+    "RoleName": "Admin",
+    "Country": "Poland",
+    "City": "Poznañ",
+    "Street": "D³uga 5",
+    "PostalCode": "xd",
+    "Password": null,
+    "ConfirmPassword": null
   }
 ]
