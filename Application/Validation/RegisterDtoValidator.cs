@@ -79,8 +79,8 @@ namespace Application.Validation
         private void SetRulesForPhoneNumber()
         {
             RuleFor(r => r.PhoneNumber)
-                .Must(p => (p is null || p.Length == 0 || p.Length == 9)
-                      && p.ContainsOnlyDigits())
+                .Must(p => p is null || p.Length == 0 || (p.Length == 9
+                      && p.ContainsOnlyDigits()))
                 .WithMessage("This is not a valid phonenumber");
         }
 
