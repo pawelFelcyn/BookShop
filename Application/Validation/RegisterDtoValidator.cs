@@ -12,7 +12,7 @@ namespace Application.Validation
         private readonly IEmailValidationHelper _emailValidationHelper;
         private const char SEPARATOR = ',';
         private readonly string[] _allowedReleNames =
-            new[] { "Manager", "User" };
+            new[] { "Admin", "Manager", "User" };
 
         public RegisterDtoValidator(IEmailValidationHelper emailValidationHelper)
         {
