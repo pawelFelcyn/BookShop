@@ -21,8 +21,6 @@ namespace Application
 
             services.AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true));
 
-            services.AddScoped<IAccountService, AccountService>();
-
             return services;
         }
     }
