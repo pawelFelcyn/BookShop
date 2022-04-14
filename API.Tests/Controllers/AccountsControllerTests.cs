@@ -41,7 +41,7 @@ namespace API.Tests.Controllers
         public static IEnumerable<object[]> LoginInvalidContentOrBadEmailData()
         {
             yield return new object[] { new LoginDto(null, null) };
-            yield return new object[] { new LoginDto("email@email.com", "Password123") };
+            yield return new object[] { new LoginDto("notexists", "Password123") };
         }
 
         [Fact]
@@ -106,7 +106,6 @@ namespace API.Tests.Controllers
             var client = _factory.CreateClient();
 
             var response = await client.PostAsync("/api/Accounts/login", content);
-            var responseContent = await response.Content.ReadAsStringAsync();
 
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
