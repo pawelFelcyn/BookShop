@@ -7,6 +7,10 @@ namespace Infrastructure.Data
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<BookCategory> Categories { get; set; }
+        public DbSet<BookAuthor> Authors { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         public BookShopDbContext(DbContextOptions options) : base(options)
         {
@@ -16,7 +20,11 @@ namespace Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.OnUserCreating()
-                        .OnAddressCreating();
+                        .OnAddressCreating()
+                        .OnBookCategoryCreating()
+                        .OnAuthorCreating()
+                        .OnPublisherCreating()
+                        .OnBookCreating();
         }
     }
 }

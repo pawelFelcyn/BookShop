@@ -59,5 +59,76 @@ namespace Infrastructure.Data
 
             return builder;
         }
+
+        public static ModelBuilder OnBookCategoryCreating(this ModelBuilder builder)
+        {
+            builder.Entity<BookCategory>(e =>
+            {
+                e.Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(30);
+            });
+
+            return builder;
+        }
+
+        public static ModelBuilder OnAuthorCreating(this ModelBuilder builder)
+        {
+            builder.Entity<BookAuthor>(e =>
+            {
+                e.Property(a => a.FirstName)
+                .IsRequired()
+                .HasMaxLength(30);
+
+                e.Property(a => a.LastName)
+                .IsRequired()
+                .HasMaxLength(30);
+            });
+
+            return builder;
+        }
+
+        public static ModelBuilder OnPublisherCreating(this ModelBuilder builder)
+        {
+            builder.Entity<Publisher>(e =>
+            {
+                e.Property(p => p.FullName)
+                .IsRequired()
+                .HasMaxLength(50);
+
+                e.Property(p => p.ShortName)
+                .HasMaxLength(10);
+            });
+
+            return builder;
+        }
+
+        public static ModelBuilder OnBookCreating(this ModelBuilder builder)
+        {
+            builder.Entity<Book>(e =>
+            {
+                e.Property(b => b.PublisherId)
+                .IsRequired();
+
+                e.Property(b => b.AuthorId)
+                .IsRequired();
+
+                e.Property(b => b.CategoryId)
+                .IsRequired();
+
+                e.Property(b => b.Title)
+                .IsRequired()
+                .HasMaxLength(70);
+
+                e.Property(b => b.Description)
+                .HasMaxLength(500);
+
+                e.Property(b => b.Amount)
+                .HasDefaultValue(0)
+                .IsRequired();
+            });
+
+            return builder;
+        }
     }
 }
